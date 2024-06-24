@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <main class="main-wrapper" id="main-wrapper">
+        <canvas id="canvas-background" class="background-default"></canvas>
+        <div class="canvas-center-infor">
+            <div class="container card-profile-information">
+                <div class="row card-content">
+                    <header class="header nav-header-profile col-lg-1 col-md-12 col-sm-12">
+                        <div class="profile d-lg-none d-block"></div>
+                        <div class="menu-btn btn-menu-visible d-lg-none d-block">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <div class="mode-btn-switch">
+                            <div class="switch-light-mode hidden">
+                                <button>
+                                    <i class="fa-regular fa-sun"></i>
+                                </button>
+                            </div>
+                            <div class="switch-dark-mode">
+                                <button>
+                                    <i class="fa-regular fa-moon"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="menu-container top-navigation-menu">
+                            <ul class="main-menu" id="mainNavigationMenu"></ul>
+                        </div>
+                    </header>
+                    <div class="card-profile card-start col-lg-5 col-md-12 col-sm-12">
+                        <div class="slideshow-container" id="imageSlideshow"></div>
+                        <div class="box-information-detail">
+                            <div class="image-profile avatar">
+                                <img src="src/image/image-profile.jpg">
+                            </div>
+                            <div class="profile-name title">Trinh Gia Khanh</div>
+                            <div class="type-writer" id="type_writer">
+                                <span class="sub-title"></span>
+                            </div>
+                            <div class="social-media-list" id="social"></div>
+                        </div>
+                        <div class="card-profile-footer contact-user">
+                            <button class="btn btn-download-cv btn-info">DOWNLOAD CV</button>
+                            <button class="btn btn-contact btn-info">CONTACT ME</button>
+                        </div>
+                    </div>
+                    <div class="section-profile-list section-data col-lg-6 col-md-12 col-sm-12">
+                        <section class="card-inner animate" id="about">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    <div class="element-item-header">
+                                        <h3>About me</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content about-items">
+                                        <div class="row">
+                                            <div class="information-box">
+                                                <strong>Hello! I’m Trinh Gia Khanh.</strong>
+                                                <p>
+                                                    An experienced Fullstack Web Developer. I have been using different programming languages such as WordPress custom theme building. I also have experience in editing with Elementor, and similar plugins. Futhermore, I am proficient in using Javascript,
+                                                    VueJS, CSS, HTML and PHP (with its frameworks such as Laravel, Codeigniter, CakePHP). I am known for attention to detail and good communication skills by colleagues.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-incard element-data">
+                                    <div class="element-item-header">
+                                        <h3>My Strength</h3>
+                                    </div>
+                                    <div class="box-data-strength row element-item-content strength-items">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-solid fa-code"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Web developer</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Creating responsive, user-friendly interfaces (front-end) and robust, scalable server-side operations (back-end), ensuring seamless, efficient, and secure web experiences.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-brands fa-html5"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Front-end</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Ensures a website or app's UI is responsive, fast, accessible, and user-friendly, delivering a seamless experience across all devices and browsers.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-brands fa-php"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Back-end</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Ensures a website or app's server-side operations are reliable, scalable, secure, and efficient, supporting robust data management and seamless user interactions.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-solid fa-book-open"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Open-mindedness</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Willingness to consider new ideas, perspectives, and experiences without prejudice, fostering understanding and growth.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-solid fa-gears"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Responsibility</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Demonstrates reliability and accountability in managing tasks and meeting deadlines, ensuring trust and dependability in professional responsibilities.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-solid fa-gears"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Logical thinking</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Exhibits strong analytical skills to evaluate information objectively, solve problems effectively, and make informed decisions.
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-strength">
+                                            <div class="item-title">
+                                                <div class="strength-item icon icon-circle">
+                                                    <i class="fa-solid fa-comment"></i>
+                                                </div>
+                                                <div class="strength-item title">
+                                                    <strong>Communication</strong>
+                                                </div>
+                                            </div>
+                                            <div class="strength-item description">
+                                                Possesses good verbal and written communication skills, facilitating clear, effective, and collaborative interactions.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="card-inner animate active" id="resume">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    <div class="element-item-header">
+                                        <h3>Resume</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content resume-items">
+                                        <div class="box-data-experience">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-briefcase"></i>
+                                                </div>
+                                                <strong>Experience</strong>
+                                            </div>
+                                            <div class="experience-items border-line time-line" id="experienceList">
+
+                                            </div>
+                                        </div>
+                                        <div class="box-data-education">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-graduation-cap"></i>
+                                                </div>
+                                                <strong>Education</strong>
+                                            </div>
+                                            <div class="education-items border-line time-line" id="educationList">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="section-incard element-data">
+                                    <div class="element-item-header">
+                                        <h3>Skills</h3>
+                                    </div>
+                                    <div class="element-item-content skill-items row">
+                                        <div class="box-data-core col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-code"></i>
+                                                </div>
+                                                <strong>Core</strong>
+                                            </div>
+                                            <div class="core-skill-items skill-list">
+                                                <span>HTML</span>
+                                                <span>CSS/SASS</span>
+                                                <span>Javascript</span>
+                                                <span>Jquery</span>
+                                                <span>PHP</span>
+                                                <span>Vue.JS</span>
+                                                <span>C/C++</span>
+                                                <span>Wordpress</span>
+                                                <span>MySql/SQL Server</span>
+                                            </div>
+                                        </div>
+                                        <div class="box-data-other col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-terminal"></i>
+                                                </div>
+                                                <strong>Other programming </strong>
+                                            </div>
+                                            <div class="other-skill-items skill-list">
+                                                <span>React</span>
+                                                <span>React Native</span>
+                                                <span>ThreeJS</span>
+                                                <span>NodeJS</span>
+                                                <span>CakePHP</span>
+                                                <span>Python</span>
+                                                <span>C#/.NET</span>
+                                                <span>SwiftUI</span>
+                                                <span>MongoDB</span>
+                                            </div>
+                                        </div>
+                                        <div class="box-data-knowledge col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-lightbulb"></i>
+                                                </div>
+                                                <strong>Knowledge</strong>
+                                            </div>
+                                            <div class="knowledge-skill-items skill-list">
+                                                <span>Website hosting</span>
+                                                <span>Hosting Installation</span>
+                                                <span>Responsive</span>
+                                                <span>Amazon Web Service</span>
+                                                <span>Good Communication</span>
+                                            </div>
+                                        </div>
+                                        <div class="box-data-language col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                            <div class="header--box">
+                                                <div class="icon-circle">
+                                                    <i class="fa-solid fa-language"></i>
+                                                </div>
+                                                <strong>Language</strong>
+                                            </div>
+                                            <div class="knowledge-skill-items skill-list">
+                                                <span>English (native)</span>
+                                                <span>Vietnamese (intermediate)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- <section class="card-inner animate" id="work">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    work
+                                </div>
+                            </div>
+                        </section> -->
+                        <section class="card-inner animate" id="blog">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    blog
+                                </div>
+                            </div>
+                        </section>
+                        <section class="card-inner animate" id="contact">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    contact
+                                </div>
+                            </div>
+                        </section>
+                        <section class="card-inner animate" id="product">
+                            <div class="card-wrap">
+                                <div class="section-incard element-data">
+                                    product
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="src/js/index.js"></script>
+<script type="text/javascript" src="src/js/image-slideshow.js"></script>
+
+</html>
