@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kanish Portfolio</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -178,7 +179,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="card-inner animate active" id="resume">
+                        <section class="card-inner animate" id="resume">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
                                     <div class="element-item-header">
@@ -295,21 +296,86 @@
                         <section class="card-inner animate" id="blog">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
-                                    blog
+                                    Sorry I didn't have any blog yet
                                 </div>
                             </div>
                         </section>
-                        <section class="card-inner animate" id="contact">
+                        <section class="card-inner animate active" id="contact">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
-                                    contact
+                                    <div class="element-item-header">
+                                        <h3>Get in Touch</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content contact-items">
+                                        <div class="list-information">
+                                            <div class="item-email item-infor row">
+                                                <strong class="infor-item-title">Email:</strong>
+                                                <span>giakhanh010200@gmail.com</span>
+                                            </div>
+                                            <div class="item-phone item-infor row">
+                                                <strong class="infor-item-title">Phone:</strong>
+                                                <span>+84969753306</span>
+                                            </div>
+                                            <div class="item-phone item-infor row">
+                                                <strong class="infor-item-title">Address:</strong>
+                                                <span>152 Dien Bien Phu Street, Ward 25, Binh Thanh District, Ho Chi Minh City, Viet Nam</span>
+                                            </div>
+                                        </div>
+                                        <div class="embed-map-detail">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.14223588401!2d106.7151534760333!3d10.800416358748699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a60bb8667f%3A0x471a0104901b3713!2zMTUyIMSQLiDEkGnhu4duIEJpw6puIFBo4bunLCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1719217044284!5m2!1svi!2s"
+                                                width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-incard element-data">
+                                    <div class="element-item-header">
+                                        <h3>Contact Form</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content form-items">
+                                        <form class="form-horizontal form-contact-data" id="formContact">
+                                            <input type="hidden" name="time" id="time">
+                                            <div class="form-field-information row">
+                                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" class="form-control input-form-contact">
+                                                        <span class="alert text-danger error-i" id="errName"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-12 col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="email" id="email" placeholder="Email" class="form-control input-form-contact">
+                                                        <span class="alert text-danger error-i" id="errEmail"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Subject" name="subject" id="subject" class="form-control input-form-contact">
+                                                <span class="alert text-danger error-i" id="errSubject"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea type="text" name="message" id="message" placeholder="Your message" class="form-control input-form-contact"></textarea>
+                                                <span class="alert text-danger error-i" id="errMessage"></span>
+                                            </div>
+                                            <div class="form-btn-send">
+                                                <div style="display:flex; align-items:center;">
+                                                    <button type="submit" class="btn btn-send-mess" id="btnForm">Send Message</button>
+                                                    <div class="loading-state">
+                                                        <div class="loading"></div>
+                                                    </div>
+                                                </div>
+                                                <span class="alert" id="success_subscribe" style="font-size:0.7em; margin:0; display:none; padding:0;"></span>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </section>
-                        <section class="card-inner animate" id="product">
+                        <section class="card-inner animate" id="projects">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
-                                    product
+                                    projects
                                 </div>
                             </div>
                         </section>
@@ -320,7 +386,9 @@
     </main>
 </body>
 <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript" src="src/js/index.js"></script>
 <script type="text/javascript" src="src/js/image-slideshow.js"></script>
+<script type="text/javascript" src="src/js/contact_form.js"></script>
 
 </html>

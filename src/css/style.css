@@ -12,6 +12,11 @@ ul.main-menu {
     display: none;
 }
 
+button.btn:focus {
+    box-shadow: none;
+    ;
+}
+
 canvas {
     position: absolute;
 }
@@ -83,6 +88,7 @@ ul.main-menu li span.menu-icon {
 
 ul.main-menu li span.menu-text {
     font-size: 12px;
+    text-transform: uppercase;
 }
 
 ul.main-menu li a {
@@ -313,6 +319,37 @@ div.item-title {
     text-align: justify;
 }
 
+.card-profile-footer.contact-user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-profile-footer.contact-user>button {
+    width: 100%;
+    border-radius: 0;
+    background: none;
+    border: none;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    transition: .5s ease-in-out;
+}
+
+.card-profile-footer.contact-user>button:hover {
+    background: var(--main-color);
+    color: #fff;
+}
+
+button.btn.btn-download-cv.btn-info {
+    border-radius: 0 0 0 10px;
+    border-right: 1px solid #ccc;
+}
+
+button.btn.btn-contact.btn-info {
+    border-radius: 0 0 10px 0;
+}
+
 
 /* end section 1 */
 
@@ -404,6 +441,83 @@ div.item-title {
 /* end section 2 */
 
 
+/* section contact */
+
+.list-information .item-infor {
+    font-size: 0.7em;
+}
+
+.form-contact-data .form-group {
+    margin-bottom: 20px;
+}
+
+.form-contact-data .form-group .input-form-contact {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 0.8em;
+}
+
+textarea {
+    height: 200px;
+}
+
+.form-contact-data .form-group input.input-form-contact:focus,
+.form-contact-data .form-group textarea.input-form-contact:focus {
+    box-shadow: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.form-contact-data .form-group input.input-form-contact.error {
+    border-bottom: 1px solid red;
+}
+
+.form-btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loading-state {
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.loading {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 10px solid #ddd;
+    border-top-color: var(--main-color);
+    border-bottom-color: var(--main-color);
+    animation: loading 1s linear infinite;
+    margin-left: 10px;
+}
+
+.form-btn-send button.btn-send-mess {
+    font-size: 0.9em;
+    transition: .5s ease-in-out;
+    padding: 0;
+}
+
+.form-btn-send button.btn-send-mess:hover {
+    color: var(--main-color);
+}
+
+span.alert.error-i {
+    padding: 0;
+    top: 10px;
+    opacity: 0;
+    background: none;
+    font-size: 0.7em;
+    border: none;
+}
+
+
+/* end section contact */
+
+
 /* end sectioin */
 
 @keyframes animate_fade_in {
@@ -425,6 +539,12 @@ div.item-title {
     to {
         opacity: 0;
         scale: 0.8;
+    }
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
     }
 }
 
