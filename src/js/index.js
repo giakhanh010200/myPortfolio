@@ -1,4 +1,5 @@
 // main menu item 
+var windowWidth = window.innerWidth;
 const menu = [{
         "url": '#about',
         "icon": '<i class="fa-solid fa-user"></i>',
@@ -157,22 +158,23 @@ change_tab.forEach(el => el.addEventListener('click', event => {
     let tab = data.getAttribute("data-target");
     let newIndex = data.getAttribute("data-index");
     let currentIndex = document.querySelectorAll(".change-section.active")[0].getAttribute("data-index");
-    console.log(newIndex, currentIndex);
-    if (currentIndex < newIndex) {
-        document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutTop");
-        document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
+    if (windowWidth > 1000) {
+        if (currentIndex < newIndex) {
+            document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutTop");
+            document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
 
-        document.getElementById(tab).classList.add("active", "fadeInBot");
-    }
-    if (currentIndex > newIndex) {
-        document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutBot");
-        document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
+            document.getElementById(tab).classList.add("active", "fadeInBot");
+        }
+        if (currentIndex > newIndex) {
+            document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutBot");
+            document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
 
-        document.getElementById(tab).classList.add("active", "fadeInTop");
+            document.getElementById(tab).classList.add("active", "fadeInTop");
+        }
+        setTimeout(function() {
+            document.querySelectorAll(".card-inner.inactive")[0].classList.remove("inactive", "fadeOutTop", "fadeOutBot");
+        }, 2500)
     }
-    setTimeout(function() {
-        document.querySelectorAll(".card-inner.inactive")[0].classList.remove("inactive", "fadeOutTop", "fadeOutBot");
-    }, 2500)
     document.querySelectorAll(".change-section.active")[0].classList.remove("active");
     data.classList.add("active");
 }));
@@ -326,4 +328,15 @@ document.getElementsByClassName("switch-light-mode")[0].addEventListener("click"
     root_theme.style.setProperty('--font-color', '#000');
     document.querySelector(".switch-dark-mode").classList.remove("hidden");
     document.querySelector(".switch-light-mode").classList.add("hidden");
+})
+
+document.getElementById("toggleMobileMenu").addEventListener("click", function(e) {
+    let menu = document.getElementById("mainNavigationMenu")
+    if (menu.classList.contains("active")) {
+        menu.classList.remove("active", "slideDown");
+        menu.classList.add("deactivate", "slideUp", "main-menu");
+    } else if (menu.classList.contains("deactivate")) {
+        menu.classList.remove("deactivate", "slideUp");
+        menu.classList.add("active", "slideDown", "main-menu");
+    }
 })

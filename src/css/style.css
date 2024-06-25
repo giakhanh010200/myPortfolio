@@ -7,6 +7,7 @@ body {
     /* cursor: none; */
     background: var(--bg-revert-color);
     background: linear-gradient(to bottom, var(--bg-revert-color) 0%, #5788fe 100%);
+    background-repeat: no-repeat;
     font-family: "Roboto Mono", monospace !important;
 }
 
@@ -54,7 +55,6 @@ ul.main-menu {
 
 button.btn:focus {
     box-shadow: none;
-    ;
 }
 
 canvas {
@@ -200,6 +200,7 @@ div.card-profile.card-start:after {
     position: relative;
     height: 50%;
     box-sizing: content-box;
+    width: 100%;
 }
 
 .profile-image-slide.active {
@@ -602,20 +603,19 @@ span.alert.error-i {
     display: block !important;
 }
 
-.fadeOutTop {
-    animation: fadeOutTop 1.5s;
-}
-
-.fadeOutBot {
-    animation: fadeOutBot 1.5s;
-}
-
-.fadeInTop {
-    animation: fadeInTop 1.5s;
-}
-
-.fadeInBot {
-    animation: fadeInBot 1.5s;
+@media only screen and (min-width: 1080px) {
+    .fadeOutTop {
+        animation: fadeOutTop 1.5s;
+    }
+    .fadeOutBot {
+        animation: fadeOutBot 1.5s;
+    }
+    .fadeInTop {
+        animation: fadeInTop 1.5s;
+    }
+    .fadeInBot {
+        animation: fadeInBot 1.5s;
+    }
 }
 
 
@@ -664,7 +664,7 @@ span.alert.error-i {
 
 :root {
     --main-color: #FF9900;
-    --bg-color: #fff;
+    --bg-color: #ffffff;
     --bg-revert-color: #222;
     --font-color: #000;
 }

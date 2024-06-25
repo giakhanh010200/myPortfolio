@@ -33,25 +33,38 @@
                 <div class="row card-content">
                     <header class="header nav-header-profile col-lg-1 col-md-12 col-sm-12">
                         <div class="top-nav-header">
-                            <div class="profile d-lg-none d-block"></div>
-                            <div class="menu-btn btn-menu-visible d-lg-none d-block">
-                                <i class="fa-solid fa-bars"></i>
+                            <div class="profile d-lg-none d-block header-mobile-left">
+                                <div class="b-image">
+                                    <img src="src/image/image-profile.jpg" height="100%">
+                                </div>
+                                <div class="text-infor">
+                                    <h6>Trinh Gia Khanh</h6>
+                                    <div class="type-writer" id="type_writer">
+                                        <span class="sub-title"></span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mode-btn-switch">
-                                <div class="switch-light-mode hidden">
-                                    <button>
-                                    <i class="fa-regular fa-sun"></i>
-                                </button>
+                            <div class="header-mobile-right">
+
+                                <div class="mode-btn-switch">
+                                    <div class="switch-light-mode hidden">
+                                        <button>
+                                            <i class="fa-regular fa-sun"></i>
+                                        </button>
+                                    </div>
+                                    <div class="switch-dark-mode">
+                                        <button>
+                                            <i class="fa-regular fa-moon"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="switch-dark-mode">
-                                    <button>
-                                    <i class="fa-regular fa-moon"></i>
+                                <button class="menu-btn btn-menu-visible d-lg-none d-block" id="toggleMobileMenu">
+                                    <i class="fa-solid fa-bars"></i>
                                 </button>
-                                </div>
                             </div>
                         </div>
                         <div class="menu-container top-navigation-menu">
-                            <ul class="main-menu" id="mainNavigationMenu"></ul>
+                            <ul class="main-menu active" id="mainNavigationMenu"></ul>
                         </div>
                     </header>
                     <div class="card-profile card-start col-lg-5 col-md-12 col-sm-12">
@@ -308,7 +321,13 @@
                         <section class="card-inner animate" id="blog">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
-                                    Sorry I didn't have any blog yet
+                                    <div class="element-item-header">
+                                        <h3>Blog</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content blog-items">
+                                        Sorry I didn't have any blog yet
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -336,7 +355,7 @@
                                         </div>
                                         <div class="embed-map-detail">
                                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.14223588401!2d106.7151534760333!3d10.800416358748699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a60bb8667f%3A0x471a0104901b3713!2zMTUyIMSQLiDEkGnhu4duIEJpw6puIFBo4bunLCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIEjhu5MgQ2jDrSBNaW5oIDcwMDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1719217044284!5m2!1svi!2s"
-                                                width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -372,7 +391,7 @@
                                             </div>
                                             <div class="form-btn-send">
                                                 <div style="display:flex; align-items:center;">
-                                                    <button type="submit" class="btn btn-send-mess" id="btnForm">Send Message</button>
+                                                    <button type="submit" class="btn btn-send-mess" id="btnForm">Send Message <i class="fa-solid fa-paper-plane"></i></button>
                                                     <div class="loading-state">
                                                         <div class="loading"></div>
                                                     </div>
@@ -387,7 +406,13 @@
                         <section class="card-inner animate" id="projects">
                             <div class="card-wrap">
                                 <div class="section-incard element-data">
-                                    on update
+                                    <div class="element-item-header">
+                                        <h3>Projects</h3>
+                                    </div>
+                                    <hr>
+                                    <div class="element-item-content blog-items">
+                                        On update
+                                    </div>
                                 </div>
                             </div>
                         </section>

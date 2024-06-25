@@ -1,11 +1,77 @@
 @media only screen and (max-width: 980px) {
+    div.card-profile-information {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
     header.header.nav-header-profile {
         padding: 0;
         position: fixed;
         top: 0;
+        margin: 0;
+        z-index: 1000;
+        left: 0;
+        right: 0;
+    }
+    .b-image {
+        width: 3em;
+    }
+    div.card-profile.card-start {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    img.banner-cover {
+        border-radius: 0;
+    }
+    .profile.d-lg-none.d-block.header-mobile-left {
+        display: flex !important;
+    }
+    .header-mobile-left .text-infor {
+        margin-left: 10px;
+    }
+    .header-mobile-left .text-infor {
+        font-size: 0.7em;
+        color: var(--font-color);
+    }
+    .header-mobile-left .text-infor h6 {
+        font-size: 1.2em;
+    }
+    .b-image img {
+        width: 100%;
+        border-radius: 50%;
+        border: 1px solid var(--main-color);
+    }
+    ul.main-menu>li {
+        border-bottom: 1px solid #ccc;
+    }
+    .profile.d-lg-none.d-block.header-mobile-left div.text-infor div.type-writer {
+        top: 30px;
+    }
+    .header-mobile-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-btn.btn-menu-visible.d-lg-none.d-block {
+        color: var(--font-color);
+        background: transparent;
+        border: none;
+    }
+    .top-nav-header {
+        display: flex;
+        justify-content: space-between;
+        background: var(--bg-color);
+        width: 100%;
+        align-items: center;
+        padding: 5px 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        z-index: 99;
     }
     div.mode-btn-switch {
         margin: 0;
+        background: transparent;
+        box-shadow: none;
     }
     ul.main-menu {
         display: flex;
@@ -20,5 +86,50 @@
     }
     .menu-container.top-navigation-menu {
         width: 100%;
+    }
+    section.card-inner {
+        display: block;
+        opacity: 1;
+        overflow: hidden;
+    }
+    .section-profile-list.section-data {
+        height: auto;
+    }
+    .section-profile-list.section-data {
+        box-shadow: none;
+    }
+    .card-profile-footer.contact-user>button {
+        border-bottom: 1px solid #ccc;
+        border-radius: 0 !important;
+    }
+    ul.deactivate {
+        margin-top: -100px;
+        position: relative;
+    }
+    ul.active.slideDown {
+        margin-top: 0;
+        position: relative;
+    }
+    .slideUp {
+        animation: slideUp 1.5s;
+    }
+    .slideDown {
+        animation: slideDown 1.5s;
+    }
+    @keyframes slideUp {
+        from {
+            margin-top: 0
+        }
+        to {
+            margin-top: -100px
+        }
+    }
+    @keyframes slideDown {
+        from {
+            margin-top: -100px;
+        }
+        to {
+            margin-top: 0
+        }
     }
 }
