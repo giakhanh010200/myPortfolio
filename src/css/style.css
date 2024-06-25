@@ -5,8 +5,8 @@ body {
     width: 100%;
     height: 100%;
     /* cursor: none; */
-    /* background: var(--bg-revert-color);
-    background: linear-gradient(to bottom, var(--bg-revert-color) 0%, #5788fe 100%); */
+    background: var(--bg-revert-color);
+    background: linear-gradient(to bottom, var(--bg-revert-color) 0%, #5788fe 100%);
     font-family: "Roboto Mono", monospace !important;
 }
 
