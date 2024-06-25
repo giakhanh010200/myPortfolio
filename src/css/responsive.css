@@ -5,6 +5,9 @@
         margin: 0;
         max-width: 100%;
     }
+    .box-bg-canvas {
+        display: none;
+    }
     header.header.nav-header-profile {
         padding: 0;
         position: fixed;
