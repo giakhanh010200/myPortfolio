@@ -1,0 +1,24 @@
+@media only screen and (max-width: 980px) {
+    header.header.nav-header-profile {
+        padding: 0;
+        position: fixed;
+        top: 0;
+    }
+    div.mode-btn-switch {
+        margin: 0;
+    }
+    ul.main-menu {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0;
+    }
+    ul.main-menu>li {
+        min-width: 20%;
+    }
+    div.menu-container ul.main-menu>li a {
+        border-radius: 0;
+    }
+    .menu-container.top-navigation-menu {
+        width: 100%;
+    }
+}

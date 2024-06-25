@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanish Portfolio</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
     <link rel="stylesheet" href="src/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -27,20 +31,22 @@
             <div class="container card-profile-information">
                 <div class="row card-content">
                     <header class="header nav-header-profile col-lg-1 col-md-12 col-sm-12">
-                        <div class="profile d-lg-none d-block"></div>
-                        <div class="menu-btn btn-menu-visible d-lg-none d-block">
-                            <i class="fa-solid fa-bars"></i>
-                        </div>
-                        <div class="mode-btn-switch">
-                            <div class="switch-light-mode hidden">
-                                <button>
+                        <div class="top-nav-header">
+                            <div class="profile d-lg-none d-block"></div>
+                            <div class="menu-btn btn-menu-visible d-lg-none d-block">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                            <div class="mode-btn-switch">
+                                <div class="switch-light-mode hidden">
+                                    <button>
                                     <i class="fa-regular fa-sun"></i>
                                 </button>
-                            </div>
-                            <div class="switch-dark-mode">
-                                <button>
+                                </div>
+                                <div class="switch-dark-mode">
+                                    <button>
                                     <i class="fa-regular fa-moon"></i>
                                 </button>
+                                </div>
                             </div>
                         </div>
                         <div class="menu-container top-navigation-menu">
@@ -60,7 +66,7 @@
                             <div class="social-media-list" id="social"></div>
                         </div>
                         <div class="card-profile-footer contact-user">
-                            <button class="btn btn-download-cv btn-info">DOWNLOAD CV</button>
+                            <button class="btn btn-download-cv btn-info" id="btn-download-cv">DOWNLOAD CV</button>
                             <button class="btn btn-contact btn-info" id="btnContact">CONTACT ME</button>
                         </div>
                     </div>
@@ -389,12 +395,59 @@
             </div>
         </div>
     </main>
+    <div w3-include-html="resume.html" style="display:none;"></div>
 </body>
 <script type="text/javascript" src="src/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript" src="src/js/index.js"></script>
 <script type="text/javascript" src="src/js/image-slideshow.js"></script>
 <script type="text/javascript" src="src/js/contact_form.js"></script>
-<script type="text/javascript" src="src/js/animate_canvas.js"></script>
+<!-- <script type="text/javascript" src="src/js/animate_canvas.js"></script> -->
+<script>
+    includeHTML();
+
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+            }
+        }
+    }
+    //download resume
+    const button = document.getElementById('btn-download-cv');
+
+    function generatePDF() {
+        // Choose the element that your content will be rendered to.
+        const element = document.getElementById('invoice');
+        // Choose the element and save the PDF for your user.
+        html2pdf().from(element).save();
+    }
+
+    button.addEventListener('click', generatePDF);
+</script>
 
 </html>

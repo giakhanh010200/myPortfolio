@@ -163,7 +163,7 @@ window.onmousemove = function(e) {
 
 function drawMouseCircle() {
     ctx.beginPath();
-    ctx.arc(mouseX, mouseY, 20, 0, 2 * Math.PI, false);
+    ctx.arc(mouseX, mouseY, 15, 2 * Math.PI, false);
     ctx.strokeStyle = "#000";
     ctx.closePath();
     ctx.fill();
