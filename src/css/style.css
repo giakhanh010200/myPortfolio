@@ -1,11 +1,51 @@
+html,
 body {
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    /* cursor: none; */
+    background: var(--bg-revert-color);
+    background: linear-gradient(to bottom, var(--bg-revert-color) 0%, #5788fe 100%);
     font-family: "Roboto Mono", monospace !important;
+}
+
+.filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fe5757;
+    animation: colorChange 30s ease-in-out infinite;
+    animation-fill-mode: both;
+    mix-blend-mode: overlay;
+}
+
+@keyframes colorChange {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .9;
+    }
+}
+
+.landscape {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 ul.main-menu {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    background: var(--bg-color);
+    transition: .5s ease-in-out;
 }
 
 .hidden {
@@ -19,6 +59,7 @@ button.btn:focus {
 
 canvas {
     position: absolute;
+    /* z-index:1; */
 }
 
 div.canvas-center-infor {
@@ -57,11 +98,16 @@ div.mode-btn-switch {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 15px;
     border-radius: 10px;
+    background: var(--bg-color);
+    transition: .5s ease-in-out
 }
 
 div.mode-btn-switch button {
     background: transparent;
     border: none;
+    color: var(--font-color);
+    font-size: 1.2em;
+    transition: .5s ease-in-out
 }
 
 ul.main-menu {
@@ -75,7 +121,14 @@ ul.main-menu li a {
     justify-content: center;
     align-items: center;
     padding: 10px 5px;
-    border-radius: 5px;
+}
+
+ul.main-menu>li:first-child a {
+    border-radius: 10px 10px 0 0;
+}
+
+ul.main-menu>li:last-child a {
+    border-radius: 0 0 10px 10px;
 }
 
 ul.main-menu>li:not(:last-child) {
@@ -93,11 +146,12 @@ ul.main-menu li span.menu-text {
 
 ul.main-menu li a {
     text-decoration: none;
-    color: #000;
+    color: var(--font-color);
     transition: all .5s ease-in-out
 }
 
-ul.main-menu li:hover a {
+ul.main-menu li a:hover,
+ul.main-menu li a.active {
     background: var(--main-color);
     color: #fff;
 }
@@ -117,8 +171,10 @@ div.card-profile.card-start {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    background: #fff;
+    background: var(--bg-color);
+    color: var(--font-color);
     height: 100%;
+    transition: .5s ease-in-out;
 }
 
 div.card-profile.card-start:after {
@@ -217,7 +273,7 @@ div.social-media-list {
 }
 
 div.social-media-list a {
-    color: #000;
+    color: var(--font-color);
     padding: 0 20px;
     transition: all .5s ease-in-out;
 }
@@ -234,9 +290,11 @@ div.social-media-list a:hover {
 
 .section-profile-list.section-data {
     height: 95%;
+    background: var(--bg-color);
     position: relative;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 20px;
+    transition: .5s ease-in-out;
 }
 
 
@@ -249,6 +307,7 @@ div.social-media-list a:hover {
 
 section.card-inner {
     display: none;
+    opacity: 0;
 }
 
 section.card-inner {
@@ -263,6 +322,8 @@ section.card-inner {
 
 section.card-inner.active {
     display: block;
+    background: var(--bg-color);
+    opacity: 1;
 }
 
 div.item-title {
@@ -282,6 +343,8 @@ div.item-title {
 
 .element-item-content {
     opacity: 0.7;
+    color: var(--font-color);
+    transition: .5s ease-in-out;
 }
 
 .col-strength {
@@ -311,12 +374,16 @@ div.item-title {
 
 .box-data-strength div.strength-item.title {
     font-size: 0.9em;
+    color: var(--font-color);
+    transition: .5s ease-in-out;
 }
 
 .box-data-strength div.strength-item.description {
     font-size: 0.8em;
     margin-top: 10px;
     text-align: justify;
+    color: var(--font-color);
+    transition: .5s ease-in-out;
 }
 
 .card-profile-footer.contact-user {
@@ -334,6 +401,7 @@ div.item-title {
     padding: 15px;
     border-top: 1px solid #ccc;
     transition: .5s ease-in-out;
+    color: var(--font-color);
 }
 
 .card-profile-footer.contact-user>button:hover {
@@ -441,6 +509,16 @@ button.btn.btn-contact.btn-info {
 /* end section 2 */
 
 
+/* section blog */
+
+.section-incard.element-data {
+    color: var(--font-color);
+}
+
+
+/* end section blog */
+
+
 /* section contact */
 
 .list-information .item-infor {
@@ -454,6 +532,8 @@ button.btn.btn-contact.btn-info {
 .form-contact-data .form-group .input-form-contact {
     border: none;
     border-bottom: 1px solid #ccc;
+    color: var(--font-color);
+    background: none;
     border-radius: 0;
     font-size: 0.8em;
 }
@@ -466,6 +546,7 @@ textarea {
 .form-contact-data .form-group textarea.input-form-contact:focus {
     box-shadow: none;
     border-bottom: 1px solid var(--main-color);
+    color: var(--main-color);
 }
 
 .form-contact-data .form-group input.input-form-contact.error {
@@ -499,6 +580,7 @@ textarea {
     font-size: 0.9em;
     transition: .5s ease-in-out;
     padding: 0;
+    color: var(--font-color);
 }
 
 .form-btn-send button.btn-send-mess:hover {
@@ -514,11 +596,42 @@ span.alert.error-i {
     border: none;
 }
 
+.inactive {
+    position: absolute;
+    display: block !important;
+}
+
+.fadeOutTop {
+    animation: fadeOutTop 1.5s;
+}
+
+.fadeOutBot {
+    animation: fadeOutBot 1.5s;
+}
+
+.fadeInTop {
+    animation: fadeInTop 1.5s;
+}
+
+.fadeInBot {
+    animation: fadeInBot 1.5s;
+}
+
 
 /* end section contact */
 
 
-/* end sectioin */
+/* section project */
+
+.section-incard.element-data {
+    color: var(--font-color);
+}
+
+
+/* end section project */
+
+
+/* end section */
 
 @keyframes animate_fade_in {
     from {
@@ -550,5 +663,55 @@ span.alert.error-i {
 
 :root {
     --main-color: #FF9900;
-    --bg-dark-color: #222;
+    --bg-color: #fff;
+    --bg-revert-color: #222;
+    --font-color: #000;
+}
+
+
+/* --bg-dark-color: #222;
+    --font-dark-color: #fff; */
+
+@keyframes fadeOutTop {
+    from {
+        opacity: 1;
+        top: 0;
+    }
+    to {
+        opacity: 0;
+        top: -120px;
+    }
+}
+
+@keyframes fadeOutBot {
+    from {
+        opacity: 1;
+        top: 0;
+    }
+    to {
+        opacity: 0;
+        top: 120px;
+    }
+}
+
+@keyframes fadeInBot {
+    from {
+        opacity: 0;
+        margin-top: 120px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        margin-top: -120px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
 }

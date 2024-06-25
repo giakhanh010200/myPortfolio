@@ -42,7 +42,12 @@ menu.forEach(function(value, key) {
     i += 1;
     link.setAttribute("href", value.url);
     link.setAttribute("data-target", value.text);
-    link.setAttribute("class", "change-section");
+    link.setAttribute("data-index", i);
+    link.setAttribute("class", "change-section " + value.text);
+
+    if (i == 1) {
+        link.classList.add("active");
+    }
     item.setAttribute("data-id", "menu-item-" + i);
     item.setAttribute("class", "menu-item item-main-nav item-key-object")
 
@@ -60,8 +65,6 @@ menu.forEach(function(value, key) {
 // text writer for positions
 const positions = [
     "Fullstack Web Developer",
-    "Front-end Developer",
-    "Back-end Developer",
     "Freelancer"
 ]
 var TxtType = function(el, toRotate, period) {
@@ -152,11 +155,31 @@ var change_tab = document.querySelectorAll(".change-section");
 change_tab.forEach(el => el.addEventListener('click', event => {
     let data = event.target.closest(".change-section");
     let tab = data.getAttribute("data-target");
-    document.querySelectorAll(".card-inner.active")[0].classList.remove("active");
-    document.getElementById(tab).classList.add("active");
-}));
+    let newIndex = data.getAttribute("data-index");
+    let currentIndex = document.querySelectorAll(".change-section.active")[0].getAttribute("data-index");
+    console.log(newIndex, currentIndex);
+    if (currentIndex < newIndex) {
+        document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutTop");
+        document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
 
-// EXPERIENCE
+        document.getElementById(tab).classList.add("active", "fadeInBot");
+    }
+    if (currentIndex > newIndex) {
+        document.querySelectorAll(".card-inner.active")[0].classList.add("inactive", "fadeOutBot");
+        document.querySelectorAll(".card-inner.active")[0].classList.remove("active", "fadeInTop", "fadeInBot");
+
+        document.getElementById(tab).classList.add("active", "fadeInTop");
+    }
+    setTimeout(function() {
+        document.querySelectorAll(".card-inner.inactive")[0].classList.remove("inactive", "fadeOutTop", "fadeOutBot");
+    }, 2500)
+    document.querySelectorAll(".change-section.active")[0].classList.remove("active");
+    data.classList.add("active");
+}));
+document.getElementById("btnContact").addEventListener("click", function(e) {
+        document.querySelectorAll(".change-section.contact")[0].click();
+    })
+    // EXPERIENCE
 const experience = [{
         "company": "DIGITYZE ASIA COMPANY LIMITED",
         "title": "Junior Web Developer",
@@ -283,4 +306,24 @@ education.forEach(function(value, key) {
     itemBox.appendChild(itemTime);
     itemBox.appendChild(itemMajor);
     educationList.appendChild(itemBox);
+})
+
+// change theme
+document.getElementsByClassName("switch-dark-mode")[0].addEventListener("click", function(e) {
+    const root_theme = document.querySelector(':root');
+    console.log(root_theme);
+    root_theme.style.setProperty('--bg-color', '#222');
+    root_theme.style.setProperty('--bg-revert-color', '#fff');
+    root_theme.style.setProperty('--font-color', '#fff');
+    document.querySelector(".switch-light-mode").classList.remove("hidden");
+    document.querySelector(".switch-dark-mode").classList.add("hidden");
+})
+document.getElementsByClassName("switch-light-mode")[0].addEventListener("click", function(e) {
+    const root_theme = document.querySelector(':root');
+    console.log(root_theme);
+    root_theme.style.setProperty('--bg-color', '#fff');
+    root_theme.style.setProperty('--bg-revert-color', '#222');
+    root_theme.style.setProperty('--font-color', '#000');
+    document.querySelector(".switch-dark-mode").classList.remove("hidden");
+    document.querySelector(".switch-light-mode").classList.add("hidden");
 })
