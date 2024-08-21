@@ -96,11 +96,14 @@ if (projectList) {
         itemJob.appendChild(jobList);
 
         itemBoxP.setAttribute("class", "e-item-box-company");
-        itemBoxP.appendChild(itemTitle, itemTime);
+        itemBoxP.appendChild(itemTitle);
+        itemBoxP.appendChild(itemTime);
 
 
         itemBox.setAttribute("class", "project-item ");
-        itemBox.appendChild(itemBoxP, itemTechUsed, itemJob);
+        itemBox.appendChild(itemBoxP);
+        itemBox.appendChild(itemTechUsed);
+        itemBox.appendChild(itemJob);
 
         projectList.appendChild(itemBox)
     })
