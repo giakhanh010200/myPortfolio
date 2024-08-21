@@ -474,6 +474,11 @@ button.btn.btn-contact.btn-info {
     text-align: justify;
 }
 
+.e-item-tech {
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
 .edu-item-company {
     font-weight: 600;
     font-size: 0.9em;

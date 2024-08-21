@@ -410,8 +410,7 @@
                                         <h3>Projects</h3>
                                     </div>
                                     <hr>
-                                    <div class="element-item-content blog-items">
-                                        On update
+                                    <div class="element-item-content project-list" id="project_list">
                                     </div>
                                 </div>
                             </div>
@@ -427,6 +426,7 @@
 <script type="text/javascript" src="src/js/index.js"></script>
 <script type="text/javascript" src="src/js/image-slideshow.js"></script>
 <script type="text/javascript" src="src/js/contact_form.js"></script>
+<script type="text/javascript" src="src/js/project.js"></script>
 <script type="text/javascript" src="src/js/animate_canvas.js"></script>
 <script>
     includeHTML();
@@ -468,8 +468,25 @@
     function generatePDF() {
         // Choose the element that your content will be rendered to.
         const element = document.getElementById('invoice');
+        let document_name = "Trinh Gia Khanh - Junior Web Developer.pdf"
+            // Enable all 'modes', with no explicit elements.
+        var opt = {
+            margin: [0.25, 0.35, 0.25, 0.25],
+            filename: document_name,
+            pagebreak: {
+                mode: '',
+                before: '#before',
+            },
+            jsPDF: {
+                orientation: 'portrait',
+                unit: 'in',
+                format: 'letter',
+                compressPDF: true
+            }
+        };
+
         // Choose the element and save the PDF for your user.
-        html2pdf().from(element).save("Trinh Gia Khanh - Junior Web Developer.pdf");
+        html2pdf().from(element).set(opt).save();
     }
 
     button.addEventListener('click', generatePDF);
