@@ -254,7 +254,8 @@ div.box-information-detail {
 }
 
 .image-profile.avatar img {
-    width: 150px;
+    width: 12em;
+    height: 12em;
     border-radius: 50%;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.5);
