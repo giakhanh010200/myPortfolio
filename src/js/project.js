@@ -28,7 +28,7 @@ var project_list = [{
         ]
     },
     {
-        "name": "E-commerce webapp about selling and transport product",
+        "name": "E-commerce webapp about selling and transporting products",
         "time": "2022",
         "technology": "Laravel, VueJS, JS, SASS, MariaDB",
         "work": [
